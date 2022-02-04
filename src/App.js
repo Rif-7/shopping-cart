@@ -5,14 +5,14 @@ import Home from "./components/Home";
 import Shop from "./components/Shop";
 import { useState } from "react";
 
-const items = [
-  { filename: "keyboard.jpg", price: 69, name: "Keyboard" },
-  { filename: "mouse.jpg", price: 100, name: "Mouse" },
-  { filename: "gamepad.jpg", price: 30, name: "Gamepad" },
-  { filename: "monitor.jpg", price: 200, name: "Monitor" },
-  { filename: "case.jpg", price: 89, name: "Case" },
-  { filename: "speaker.jpg", price: 40, name: "Speaker" },
-];
+const items = {
+  Keyboard: { filename: "keyboard.jpg", price: 69 },
+  Mouse: { filename: "mouse.jpg", price: 100 },
+  Gamepad: { filename: "gamepad.jpg", price: 30 },
+  Monitor: { filename: "monitor.jpg", price: 200 },
+  Case: { filename: "case.jpg", price: 89 },
+  Speaker: { filename: "speaker.jpg", price: 40 },
+};
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -26,13 +26,18 @@ function App() {
     }
   }
 
+  // Return how much the total price of the item is
+  function getItemTotal(name) {
+    const itemQuantity = itemAmount[getItemIndex(name)].amount;
+    return items[name].price * itemQuantity;
+  }
+
   function updateItemAmount(name) {
     const index = getItemIndex(name);
     if (index === undefined) return;
     const newItemAmount = itemAmount.concat();
     newItemAmount[index].amount++;
     setItemAmount(newItemAmount);
-    console.log(itemAmount);
   }
 
   function updateCart(e) {

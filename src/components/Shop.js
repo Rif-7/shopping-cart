@@ -1,11 +1,17 @@
 import Item from "./Item";
 
-const Shop = (props) => (
-  <div className="shop-items">
-    {props.items.map((item, index) => (
-      <Item item={item} updateCart={props.updateCart} key={index} />
-    ))}
-  </div>
-);
+function Shop(props) {
+  const { items } = props;
+  const names = Object.keys(items);
+  return (
+    <div className="shop-items">
+      {names.map((name, index) => {
+        // creating a new object with keys: name, filename and price
+        const item = Object.assign({ name }, items[name]);
+        return <Item item={item} updateCart={props.updateCart} key={index} />;
+      })}
+    </div>
+  );
+}
 
 export default Shop;
