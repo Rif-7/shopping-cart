@@ -1,11 +1,9 @@
 import Item from "./Item";
 
-const fakeItems = [{}, {}, {}, {}, {}];
-
 const Shop = (props) => (
   <div className="shop-items">
-    {fakeItems.map((item) => (
-      <Item item={item} updateCart={props.updateCart} />
+    {props.items.map((item, index) => (
+      <Item item={item} updateCart={props.updateCart} key={index} />
     ))}
   </div>
 );
