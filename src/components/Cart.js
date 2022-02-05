@@ -24,7 +24,10 @@ function Cart(props) {
       <div className="checkout-div">
         <div className="total">Grand Total: {grandTotal}$</div>
         <div className="total-items">Total Items: {totalItems}</div>
-        <div className="checkout" onClick={() => alert("Buy MORE")}>
+        <div
+          className="checkout"
+          onClick={() => alert("Your Order Has Been Placed")}
+        >
           Checkout
         </div>
       </div>
