@@ -14,7 +14,9 @@ function Navbar(props) {
           </Link>
         </ul>
       </div>
-      <div className="cart-info">Cart - {props.cartItems} </div>
+      <div className="cart-info" onClick={props.toggleCart}>
+        Cart - {props.cartItems}{" "}
+      </div>
     </div>
   );
 }
