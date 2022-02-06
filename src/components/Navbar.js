@@ -6,10 +6,10 @@ function Navbar(props) {
       <div className="header">Rif'Store</div>
       <div className="nav-links">
         <ul>
-          <Link to="/" className="nav-link">
+          <Link to="shopping-cart" className="nav-link">
             <li>Home</li>
           </Link>
-          <Link to="shop" className="nav-link">
+          <Link to="shopping-cart/shop" className="nav-link">
             <li>Shop</li>
           </Link>
         </ul>

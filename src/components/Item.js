@@ -11,13 +11,14 @@ function Item(props) {
   }
 
   useEffect(() => {
+    if (!addedClass.includes("item-added-show")) return;
     const timeout = setTimeout(() => {
       setAddedClass("item-added");
     }, 1000);
     return () => {
       clearTimeout(timeout);
     };
-  }, [item]);
+  }, [item, addedClass]);
 
   return (
     <div className="shop-item">

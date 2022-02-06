@@ -104,9 +104,9 @@ function App() {
         cartUpdater={updateItemAmount}
       />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="shopping-cart" element={<Home />} />
         <Route
-          path="shop"
+          path="shopping-cart/shop"
           element={<Shop updateCart={addToCart} items={items} />}
         />
       </Routes>

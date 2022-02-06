@@ -201,7 +201,7 @@ body {
 .item-added {
   width: 200px;
   text-align: center;
-  background-color: #3882f6;
+  background-color: rgb(255, 172, 95);
   border-radius: 4px;
   opacity: 0;
   position: absolute;
